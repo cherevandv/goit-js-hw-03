@@ -10,13 +10,10 @@ const products = [
 const getAllPropValues = function (arr, prop) {
   const result = [];
 
-  for (const item of arr) {
-    const keys = Object.keys(item);
-    for (const key of keys) {
-      if (prop === key) {
-        result.push(item[prop]);
-      }
-    }
+  for (const item of arr) { 
+    if(item[prop]){
+      result.push(item[prop]);
+    }   
   }
   return result;
 };

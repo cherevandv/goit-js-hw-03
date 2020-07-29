@@ -1,28 +1,16 @@
 "use strict";
 
 const findBestEmployee = function (employees) {
-  //Вариант 1:
-  const days = Object.values(employees);
-  let total = 0;
+  let maxNumber = 0;
+  let bestEmployee;
 
-  for (let i = 0; i < days.length; i += 1) {
-    total < days[i] ? (total = days[i]) : total;
-  }
-
-  for (const key in employees) {
-    if (employees[key] === total) {
-      return key;
+  for (const key in employees){
+    if(employees[key]>maxNumber){
+      maxNumber = employees[key];
+      bestEmployee = key;
     }
   }
-
-  //Вариант 2:
-  // const days = Object.values(employees);
-
-  // for (const key in employees) {
-  //   if (employees[key] === Math.max(...days)) {
-  //     return key;
-  //   }
-  // }
+     return bestEmployee;
 };
 
 /*
